@@ -5,12 +5,22 @@ var xiayu= new User({
     admin: true
 });
 
+var wrx = new User({
+    name:"Wrx",
+    admin:false
+});
+
 db.connect();
 
 xiayu.save(function(err) {
     if(err) throw err;
 
-    console.log('User saved');
+    console.log('xiayu saved');
+});
 
-    db.close();
+wrx.save(function(err) {
+    if(err) throw err;
+
+    console.log('wrx saved');
+
 });

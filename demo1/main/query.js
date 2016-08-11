@@ -1,4 +1,4 @@
-var db = require('./db');
+var db = require('./db.js');
 
 db.connect();
 
@@ -10,24 +10,4 @@ User.find({},function (err,users) {
 
     console.log("All users");
     console.log(users);
-});
-
-User.find({name:"Xiayu"},function (err,user) {
-    if(err)
-        throw err;
-    console.log('Specify User');
-    console.log(user);
-});
-
-User.find({name:"Non-existent-user"},function (err,user) {
-    if(err)
-        throw err;
-    console.log('Find Non-existent-user');
-    console.log(user);
-});
-User.findOne({name:"Non-existent-user"},function (err,user) {
-    if(err)
-        throw err;
-    console.log("Find non-existent-user or null");
-    console.log(user);
 });
